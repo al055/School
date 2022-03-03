@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0"
+    />
+    <!--this makes it so the width changes to whatever the device screen width is-->
+    <!--this is for SEO-->
+    <meta
+      name="description"
+      content="professional clean Turtle Tortoise website, compare between turtles and Tortoises"
+    />
+    <meta name="keywords" content="Turtles, Tortoises, Education, Comparison" />
+    <meta
+      name="author"
+      content="co-created and co-authored by Amy Leung, Michael Mitchell, Jachin Neubauer, Vincent Chen"
+    />
+    <title>Delightful Tortoises</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- TO MAKE ICONS and LOGO and some PICs transparent https://onlinepngtools.com/create-transparent-png-->
+    <link rel="icon" href="./img/icon.png" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .column {
+        float: left;
+        width: 50%;
+        padding: 60px 10px 60px 10px;
+      }
+
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      h2 {
+        text-align: center;
+        font-size: 35px;
+      }
+      p {
+        text-align: left;
+      }
+      .column img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container" id="logo">
+        <!-- this will create the upper left logo with the turtle -->
+        <a href="index.html"
+          ><img src="./img/logo2.png" alt="turtle logo" width="200" height="60"
+        /></a>
+
+        <!-- for navigation menu near the top -->
+        <!-- to make the burger i used the w3school resource https://www.w3schools.com/howto/howto_js_mobile_navbar.asp-->
+
+        <nav>
+          <div class="container" id="wraparound">
+            <div class="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <ul class="navigation_menu">
+              <li><a href="index.html">home</a></li>
+              <li>
+                <a href="TurtlesvsTortoises.html"> Turtles VS. Tortoises </a>
+              </li>
+              <li><a href="conservation.html"> Conservation </a></li>
+              <li><a href="missionstatement.html"> Mission Statement </a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="comparison">
+      <div class="container">
+        <h2>Turtle VS. Tortoise</h2>
+        <p>
+          The major difference between the two is turtles spend most of their
+          time in the sea while tortoises spend their time on land! As a result
+          turtles have flippers and tortoises have club-like feet, both perfect
+          for their respective enviroment. Another key difference, like their
+          adapted feet, is the shape and design of their shells. Turtles have an
+          aerodynamic and thin shell, great for ripping through the water,
+          tortoises on the other hand have quite the opposite, as they have big
+          dome-like shells.
+          <br />
+          <br />
+        </p>
+        <div class="row">
+          <div class="column">
+            <img src="./img/Turtle.png" alt="Turtle" width="500" height="500" />
+          </div>
+          <div class="column">
+            <img
+              src="./img/Tortoise.png"
+              alt="Tortoise"
+              width="500"
+              height="500"
+            />
+          </div>
+          <!--https://www.nashvillezoo.org/our-blog/posts/turtles-vs-tortoises#:~:text=Tortoises%20have%20more%20rounded%20and,for%20life%20spent%20in%20water.-->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p id="border_above"></p>
+        <p>
+          Copyright &copy; 2021, Delightful Tortoises Design | All Rights
+          Reserved.
+        </p>
+        <ul>
+          <li>amy leung</li>
+          <li>Michael Mitchell</li>
+          <li>jachin neubauer</li>
+          <li>Vincent chen</li>
+        </ul>
+      </div>
+    </footer>
+    <script src="./js/animate.js"></script>
+  </body>
+</html>

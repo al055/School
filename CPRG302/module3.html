@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 3 AMY</title>
+
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+        font-size: 1em;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+      }
+      table {
+        margin-top: 1em;
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-bottom: 3em;
+        text-align: center;
+        padding: 0.25em 0em 0.25em 0em;
+      }
+      tr:first-child {
+        background-color: lightskyblue;
+      }
+      .title {
+        height: 3em;
+        max-width: 30em;
+        min-width: 150px;
+        position: relative;
+      }
+      .title h2 {
+        display: block;
+        margin: 1em;
+        font-size: 20px;
+        padding-top: 0.7em;
+      }
+
+      .form {
+        padding: 20px 0px 0px 20px;
+        font-size: 1em;
+        color: #76818b;
+        max-width: 30em;
+        min-width: 150px;
+        margin-bottom: 2em;
+      }
+
+      .small {
+        width: 45%;
+        margin-right: 1em;
+      }
+      .big {
+        margin-top: 0.5em;
+        width: 94%;
+      }
+      .button_submit {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 1em 0em 1em 0em;
+        cursor: pointer;
+        border: none;
+        color: #000000;
+        font-size: 20px;
+        font-weight: bold;
+        border: 2px solid #34495e;
+      }
+      .button_submit:hover {
+        background-color: lightskyblue;
+        color: black;
+      }
+
+      input,
+      #city {
+        border-style: solid;
+        border-width: 2px;
+        border-color: #cccccc;
+        border-radius: 3px;
+        padding: 10px 10px 9px 2.3em;
+        color: #868686;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body class="container">
+    <table>
+      <tr>
+        <th>Originating City</th>
+        <th>Destination City</th>
+        <th>Price</th>
+        <th>Duration</th>
+      </tr>
+      <tr>
+        <td rowspan="5">Calgary</td>
+        <td>Los Cabos</td>
+        <td>$1667 per adult</td>
+        <td rowspan="5">5 Days</td>
+      </tr>
+      <tr>
+        <td>Havana</td>
+        <td>$1289 per adult</td>
+      </tr>
+      <tr>
+        <td>Barcelona</td>
+        <td>$3249 per adult</td>
+      </tr>
+      <tr>
+        <td>London</td>
+        <td>$3207 per adult</td>
+      </tr>
+      <tr>
+        <td>Rome</td>
+        <td>$3439 per adult</td>
+      </tr>
+    </table>
+
+    <div class="form1">
+      <div class="title"><h2>Order Form</h2></div>
+      <form
+        action=" https://webdevbasics.net/scripts/demo.php"
+        class="form"
+        method="POST"
+      >
+        <input
+          class="small"
+          type="text"
+          placeholder="First Name.."
+          autocomplete="off"
+          required
+          name="name_first"
+        />
+        <input
+          class="small"
+          type="text"
+          placeholder="Last Name.."
+          autocomplete="off"
+          required
+          name="name_Last"
+        />
+        <input
+          class="big"
+          type="email"
+          name="e-mail"
+          placeholder="example@gmail.com"
+          autocomplete="off"
+          required
+        />
+        <input
+          class="big"
+          data-format="yyyy-mm-dd"
+          type="date"
+          name="date"
+          required
+        />
+
+        <div>
+          <select id="city" name="city" class="big" required>
+            <option value="empty" selected disabled>
+              Choose your Travel Destination..
+            </option>
+            <option value="los cabos">Los Cabos</option>
+            <option value="havana">Havana</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="london">London</option>
+            <option value="rome">Rome</option>
+          </select>
+        </div>
+
+        <input
+          class="big"
+          type="number"
+          name="passenger_number"
+          placeholder="Enter # of Tickets to purchase"
+          autocomplete="off"
+          required
+          min="1"
+          max="100"
+        />
+        <input type="submit" class="button_submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

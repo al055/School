@@ -1,0 +1,351 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  background-color: #008fe2;
+}
+
+/* global container sets the width to 80 to be responsive, margin: auto moves the text with the browser, and if there is text too big for the page, there will be no scroll bar at the bottom, instead it will hide it */
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* header */
+
+header #logo {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+header #logo img {
+  height: auto;
+  margin: 0;
+}
+
+header a {
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+header {
+  border-bottom: 5px solid #ff9b00;
+}
+
+header li {
+  display: inline;
+  padding: 0em 0em 0em 2em;
+}
+
+header nav {
+  float: right;
+  margin-top: 2em;
+}
+
+header a:hover {
+  color: #ff9b00;
+  font-weight: bold;
+}
+
+nav #wraparound {
+  text-align: center;
+  width: 100%;
+  margin-top: 1em;
+}
+
+nav .navigation_menu a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+nav .navigation_menu li {
+  display: inline-block;
+  padding: 0.25em 5em 0em 5em;
+}
+
+nav .navigation_menu a:hover {
+  color: #ff9b00;
+}
+
+.burger {
+  display: none;
+  padding: 0.25em 1em 0.25em 0.25em;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 1.5em;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 5px 20px 5px 0px;
+  transition: all 0.5s ease;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  margin: 2em auto 1em auto;
+}
+#border_above {
+  border-bottom: 3px solid #ff9b00;
+  width: 100%;
+}
+
+footer p {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer li {
+  text-transform: uppercase;
+  padding-bottom: 0.25em;
+}
+@media screen and (max-width: 768px) {
+  header #logo,
+  header nav,
+  header nav li,
+  header a {
+    float: none;
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .navigation_menu {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    top: 12em;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform: translate(100%);
+    transition: transform 0.5s ease-out;
+    background-color: #008fe2;
+  }
+  .burger {
+    display: block;
+    float: right;
+  }
+
+  .navigation_menu_active {
+    transform: translateX(0%);
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  footer {
+    min-height: 11em;
+  }
+  #showcase {
+    margin: 0 auto;
+    resize: none;
+  }
+}
+
+@media (max-width: 1055px) {
+  header #logo,
+  header nav,
+  header nav li,
+  header a {
+    float: none;
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  nav .navigation_menu li {
+    float: none;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+  footer {
+    width: 100%;
+    min-height: 11em;
+  }
+  footer ul,
+  footer li {
+    display: inline;
+    display: flex;
+    padding: 0em 0.5em 0em 0.5em;
+  }
+}
+
+h3 {
+  font-size: 35px;
+}
+
+/*  THE ABOVE IS PURELY FOR THE DESIGN OF THE HEADER, NAVIGATION, FOOTER, and BANNER  */
+
+/*  THIS IS FOR THE HOME PAGE INDEX.HTML  */
+
+#showcase {
+  min-height: 50em;
+  background: url("../img/aron-visuals-_rK32L_RjtU-unsplash.jpg") no-repeat
+    center center;
+  background-size: cover;
+  text-align: center;
+  margin-top: 2em;
+}
+#showcase h2 {
+  margin-top: 4em;
+  font-size: 50px;
+  margin-bottom: 2em;
+}
+
+section {
+  min-height: 500px;
+}
+
+.video {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.textbox1 {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+.box {
+  width: 700px;
+  padding-top: 5px;
+  border-style: solid;
+  border-color: #0000;
+  border-width: 70px;
+  padding-left: 5px;
+  padding-bottom: 100px;
+}
+
+.tortMission {
+  display: block;
+  margin-left: 850px;
+  margin-right: auto;
+  margin-top: -600px;
+  width: 40%;
+}
+
+/*  THIS IS THE FOR THE CONTACT FORM contact.html    */
+
+#contact {
+  text-align: center;
+}
+
+form {
+  min-width: 60%;
+  max-width: 60%;
+  background: #0bc1c7;
+  border: 3px solid #ff9b00;
+  border-radius: 15px;
+  padding: 0em 5em 1em 4em;
+  display: inline-block;
+  margin: 3em auto 3em auto;
+  box-shadow: 0 0 20px #ff9b00;
+}
+
+[type="text"],
+[type="email"],
+textarea {
+  display: block;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  padding: 0.5em;
+  margin-bottom: 2em;
+  min-width: 100%;
+  max-width: 100%;
+  color: #3f3f3f;
+}
+
+textarea {
+  min-height: 5em;
+  max-height: 40em;
+}
+
+.over_input {
+  float: left;
+  text-align: left;
+  line-height: 2em;
+  margin-left: 1em;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #008fe2;
+  border-radius: 15px;
+  background: #008fe2;
+  padding: 0.5em 1.25em;
+  letter-spacing: 1px;
+  margin: 0em 0.5em 2em 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+button:hover {
+  background: #ff9b00;
+  border: 1px solid #ff9b00;
+  box-shadow: 0 0 15px #ff9b00;
+  transition: 0.5s;
+}
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+table,
+form {
+  margin: auto;
+  border: 1px solid black;
+  width: 600px;
+  border-spacing: 0;
+}

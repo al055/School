@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="module 5 intro to bootstrap, this is an example of how to use bootstrap"
+    />
+    <meta name="keywords" content="Module 5, bootstrap" />
+    <meta name="author" content="Created and Authored by Amy Leung" />
+    <title>Module5</title>
+    <!-- BOOTSTRAP CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #f5f5f5;
+      }
+      .header {
+        background-image: url(./img/sigmund-By-tZImt0Ms-unsplash.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #ffffff;
+        width: 100%;
+        height: 57em;
+      }
+      .overlay {
+        position: absolute;
+        min-height: 100%;
+        min-width: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .description {
+        margin-top: 25em;
+        text-align: center;
+      }
+
+      .bg-primary {
+        background-color: #565282 !important;
+      }
+      .bg-secondary {
+        background-color: #979797 !important;
+      }
+      .navbar .navbar-brand:hover {
+        color: #e6e6e6;
+        text-shadow: 4px 4px #969696;
+      }
+    </style>
+  </head>
+
+  <!--  link to all of the bootstrap classes
+  https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
+-->
+    <!--  NAVIGATION  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="module5.html">MODULE5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="module5.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdown01"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              ></a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#video">Video</a>
+                <a class="dropdown-item" href="#gameboy">Gameboy</a>
+                <a class="dropdown-item" href="#questions">Questions</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-header header container-fluid">
+      <div class="overlay">
+        <div class="description">
+          <h1>Welcome to MODULE 5</h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row jumbotron" id="about">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-md-lg-9 col-xl-10"></div>
+        <p class="lead">
+          Module 5 is a site dedicated to the history of video games, this is
+          for nostalgia gamers who miss the melancholy of joysticks, blowing
+          into cartridges, and spilling grape juice on white carpet
+        </p>
+      </div>
+    </div>
+
+    <div class="container-fluid padding">
+      <div class="row text-center padding mb-5" id="contact">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h3>1990's</h3>
+          <p>
+            1990 games, like Tetris, Pokemon, Super Mario, Metroid, Donkey Kong,
+            and other great hits!
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h3>2000's</h3>
+          <p>
+            1990 games, like Bioshock, Call of Duty, Grand Theft Auto, Okami,
+            Resident Evil, and other great hits!
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h3>Contact the Gamers Guild</h3>
+          <h4>Phone Number:</h4>
+          <a href="tel:1-857-239-7601">Phone Number: 1-857-239-7601</a>
+          <h4>E-mail:</h4>
+          <a href="mailto:0leung.a@gmail.com">Contact the GM directly!<br /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-secondary jumbotron" id="video">
+      <div class="row text-center padding">
+        <div class="col-xs-10 col-sm-10 col-md-10 mx-auto">
+          <h3>A Brief History of Video Games</h3>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="//www.youtube.com/embed/GoyGlyrYb9c"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid padding">
+      <div class="card-body">
+        <blockquote class="blockquote text-center padding">
+          <p class="mt-3">
+            “Some trees flourish, others die. Some cattle grow strong, others
+            are taken by wolves. Some men are born rich enough and dumb enough
+            to enjoy their lives. Ain’t nothing fair.”
+          </p>
+          <footer class="blockquote-footer padding">
+            John Marston
+            <cite title="Source Title" class="mb-3 padding"
+              >Red Dead Redemption</cite
+            >
+            <br />
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="media row bg-secondary">
+        <img
+          class="col-xs-1 col-md-8 col-sm-5 col-lg-3 ml-0"
+          id="gameboy"
+          src="./img/ben-wecpA8RQ_zc-unsplash.jpg"
+          alt="Gameboy"
+        />
+        <div class="media-body text-light p-3">
+          <h5 class="mt-4">GAMEBOY</h5>
+          <p>
+            Some of the best games produced in the 2000's were for the gameboy
+            series.<br />
+            the success of the gameboy series can be attributed to the widely
+            popular pokemon series. The pokemon fanbase is hugely popular and
+            incredibly successful. this cult like fanaticism guaranteed the
+            current success of this game. <br />
+            becuase this game was developed so early, it is widely popular and
+            iconic amongst its youth population. Due to the youth population
+            aging out of its immaturity, there is an increase of sales and
+            pokemons acclaim
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="mt-5 pt-5" id="questions">
+        <i><h6>("i wanted more practice so I put the answer to the questions in here")</h6></i>
+      <div class="media">
+        <h3>Questions</h3>
+          <div>
+            <details class="mt-5 mb-5">
+              <summary class="mb-4"><h5>1.&emsp;What is the purpose of the viewport meta tag?</h5></summary>
+              <p>The viewport meta tag tells the browser to adjust to the device screen. This is useful for mobile browsers. <br><br>
+                width=device-width refers to the width of the device screen itself, so if the width of the screen is 450pixels then the browser will adjust to 450pixels.<br><br>
+                height=device-height refers to the height of the device screen itself, so if the height of the screen is 900pixels then the browser will adjust to 900pixels.<br><br>
+                initial-scale=1.0 refers to the initial zoom level, this is the default of what people are used to. So  in the browser 1.0=100% which means that the zoom level is default. 2.0=200% this means that the browser will be zoomed in to 200% <br><br>
+                </p>
+              </details>
+            <details class="mt-3 mb-5">
+              <summary class="mb-4"><h5>2.&emsp;Write two paragraphs explaining the advantages of table-less design and disadvantages of table-based design.</h5></summary>
+              <p>The advantages of table-less design are numerous, especially for web designers. Some of those advantages are the lower amount of code, which means less lines of code. There is less lines of code because tables require 	&lt;table>, 	&lt;td>, 	&lt;tr>, 	&lt;thead>, 	&lt;tbody>, whereas tableless designs just use div tags to open and close. Table-less designs are easier to maintain, this is because of the less markup, and you do not need to keep track of rows and columns. Table-less design also means that it is easier to change a css colour or adjust padding. <br><br>
+                The disadvantages of table-based design are as follows. Increased amount of code again this is becuase of the need for  	&lt;table>,  	&lt;td>,  	&lt;tr>,  	&lt;thead>,  	&lt;tbody>, etc. This makes the page load slower. Table-based designs are also better for content. Tables are harder to update, and adjust when necessary. On some devices, there is an inability to read or access those tables. 
+                  <br><br>
+                </p>
+              </details>
+            <details class="mt-3 mb-5">
+              <summary class="mb-4"><h5>3.&emsp;Does the telephone call hyperlink work best with desktop or mobile devices? Explain.</h5></summary>
+              <p>The call hyperlink would work best on a mobile device this is because, most desktops/laptops do not have a sim card inside of the device itself. This means that mobile devices (implied that there is a sim-card and there is reception) can access and actually use the telephone call hyperlink most effectively.<br><br>
+                </p>
+              </details>
+            <details class="mt-3 mb-5">
+              <summary class="mb-4"><h5>4.&emsp;What is a major security threat with the “mailto” hyperlink?</h5></summary>
+              <p>According to the owlysec attackers can specify parameters that could potentially steal keys, and files. Mailto hyperlinks are also vulnerable to HTML injection, which means users and potential attackers can modify the code, therefore modifying the pages. If the attacker can modify the page this means that the page can be vulnerable to different types of injections (SQL, PHP, HTML).
+                <br>
+                <p>Reference: https://owlysec.com/data-leaks/mailto-links-can-pose-an-unexpected-security-risk</p><br><br>
+                </p>
+              </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="bg-primary text-center text-light text-lg-start mt-5 padding"
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3 padding">
+        © 2020 Copyright:
+        <p>Amy Leung SID: 803921</p>
+        <br />
+        <p>GAMERS UNITE!</p>
+
+        <a id="back-to-top" href="#" class="btn btn-dark btn-md back-to-top" role="button">▲</a>
+      </div>
+
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

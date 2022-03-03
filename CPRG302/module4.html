@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <title>Module 4 AMY</title>
+
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.25;
+        font-size: 1em;
+      }
+      .container {
+        max-width: 80%;
+        margin: auto;
+      }
+      body {
+        margin: 0;
+        color: #404040;
+        background-color: rgb(245, 245, 245);
+      }
+      h1 {
+        font-weight: bold;
+        font-size: 30px;
+      }
+      form {
+        text-align: center;
+      }
+
+      button {
+        display: inline-block;
+        border: 1px solid #27d4ff;
+        border-radius: 5px;
+        background: #27d4ff;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 0.5em 1.25em;
+        letter-spacing: 1px;
+        margin: 0em 0em 0.5em;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #00c2f3;
+        border: 1px solid #00c2f3;
+      }
+      [type="text"] {
+        display: block;
+        border: 1px solid #a1a1a1;
+        border-radius: 5px;
+        padding: 0.5em;
+        background: transparent;
+        margin-bottom: 1em;
+        width: 100%;
+        max-width: 100%;
+      }
+      div {
+        margin: 3em 0em 0em 3em;
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+      }
+      .editcontent {
+        border: 2px solid #27d4ff;
+        border-radius: 5px;
+      }
+      .editcontent li {
+        margin: 0.5em 0em 0.5em 1em;
+        padding: 0em 0em 0.5em 0em;
+        list-style-type: decimal;
+      }
+      label {
+        font-size: 20px;
+        padding-left: 1em;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.min.js"></script>
+  </head>
+  <br />
+  <body>
+    <div class="container">
+      <div class="form">
+        <div class="title"><h1>Module 4 Form handled using JavaScript</h1></div>
+        <form
+          method="POST"
+          action="https://webdevbasics.net/scripts/demo.php"
+          target="_blank"
+          id="form"
+        >
+          <input
+            type="text"
+            placeholder=" Name.."
+            autocomplete="off"
+            required
+            id="name"
+          />
+          <input
+            type="text"
+            placeholder=" Enter Favourite Colour.."
+            autocomplete="off"
+            required
+            id="colour"
+          />
+          <button onclick="addtoUl()" type="submit" id="submit">submit</button>
+        </form>
+      </div>
+      <div class="list">
+        <h1>Data Output in an Unordered List</h1>
+        <div id="output"></div>
+        <script>
+          $(document).ready(function () {
+            $("form").validate();
+          });
+          // this was hella difficult
+
+          function addtoUl() {
+            const name = document.getElementById("name");
+            const colour = document.getElementById("colour");
+            localStorage.setItem("name", name.value);
+            localStorage.setItem("colour", colour.value);
+
+            /* wantef to create a ul then createa a li for the ul.
+            but it broke my working code.
+            var createUl = document.createElement("ul");
+            document.body.appendChild(createUl);
+            */
+
+            for (let i = 0; i < localStorage.length; i++) {
+              /* this did not work for me, it ended up breaking my code
+
+              //create a li through each iteration
+              var li = document.createElement("li");
+              li.innerHTML += `${colour} <br>`;
+              createUl.appendChild(li);
+              */
+
+              const output = document.getElementById("output");
+              const name = localStorage.key(i);
+              const colour = localStorage.getItem(name);
+
+              var x = (output.innerHTML += `${colour} <br>`);
+              var textColor = document.getElementById("output");
+              textColor.style.color = colour;
+            }
+            document.getElementById("form").reset();
+          }
+        </script>
+      </div>
+
+      <div>
+        <h1>Get Your Geolocation</h1>
+        <button onclick="getGeolocation()">Get your Geolocation</button>
+        <p id="printGeo"></p>
+        <script>
+          // this code is from the class
+          var G = document.getElementById("printGeo");
+
+          function getGeolocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+              G.innerHTML = "Geolocation is not supported by this browser.";
+            }
+          }
+
+          function showPosition(position) {
+            G.innerHTML =
+              "Your Latitude is: " +
+              position.coords.latitude +
+              "<br> Your Longitude is: " +
+              position.coords.longitude;
+          }
+        </script>
+      </div>
+      <div>
+        <h1>Feature 1: Video</h1>
+        <iframe
+          width="689"
+          height="517"
+          src="https://www.youtube.com/embed/6-HUgzYPm9g"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <br>
+      </div>
+
+      <div>
+        <details>
+          <summary><h1>Feature 2: details (click me)</h1></summary>
+          <p> this adds detail to whatever subject i choose to mention. this disclosure element is pretty cool. </p>
+          <p>Aliquam arcu tellus, vestibulum eu velit sit amet, lobortis sollicitudin risus. In rhoncus bibendum enim, eget iaculis enim ullamcorper vel. Curabitur vel elit at erat tincidunt dignissim at in felis. Aenean lacinia aliquam justo sodales sagittis. Vivamus ac condimentum metus. Aliquam scelerisque venenatis sem. Curabitur vitae vestibulum purus.</p>
+        </details>
+      </div>
+      
+      <div>
+        <h1>Feature 3: Editable Content</h1>
+        <label><i>Edit this list to whatever you want</i></label>
+        <ul class="editcontent" contenteditable="true">
+          <li>bread</li>
+          <li>coffee</li>
+          <li>popcorn</li>
+          <li>butter</li>
+          <li>peanut butter</li>
+        </ul>
+      </div>
+
+    </div>
+  </body>
+</html>

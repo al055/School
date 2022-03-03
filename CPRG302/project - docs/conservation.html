@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0"
+    />
+    <!--this makes it so the width changes to whatever the device screen width is-->
+    <!--this is for SEO-->
+    <meta
+      name="description"
+      content="professional clean Turtle Tortoise website, compare between turtles and Tortoises, learn about conservation"
+    />
+    <meta
+      name="keywords"
+      content="Turtles, Tortoises, Education, conservation, conservation video"
+    />
+    <meta
+      name="author"
+      content="co-created and co-authored by Amy Leung, Michael Mitchell, Jachin Neubauer, Vincent Chen"
+    />
+    <title>Delightful Tortoises</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- TO MAKE ICONS and LOGO and some PICs transparent https://onlinepngtools.com/create-transparent-png-->
+    <link rel="icon" href="./img/icon.png" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container" id="logo">
+        <!-- this will create the upper left logo with the turtle -->
+        <a href="index.html"
+          ><img src="./img/logo2.png" alt="turtle logo" width="200" height="60"
+        /></a>
+
+        <!-- for navigation menu near the top -->
+        <!-- to make the burger i used the w3school resource https://www.w3schools.com/howto/howto_js_mobile_navbar.asp-->
+
+        <nav>
+          <div class="container" id="wraparound">
+            <div class="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <ul class="navigation_menu">
+              <li><a href="index.html">home</a></li>
+              <li>
+                <a href="TurtlesvsTortoises.html"> Turtles VS. Tortoises </a>
+              </li>
+              <li><a href="conservation.html"> Conservation </a></li>
+              <li><a href="missionstatement.html"> Mission Statement </a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="conservation">
+      <div class="container">
+        <div class="textbox1">
+          <h3>How Can We Help</h3>
+
+          <h4>Turtles</h4>
+          <p>
+            The biggest way we can help our small shelled friends is by doing
+            what we can to minimize the affect we have on their natural
+            habitats. Each year more and more wetlands are reclaimed and
+            renovated for housing developments and other projects. Working with
+            your local government we can get more and more wetlands protected
+            and keep the little guys safe.
+          </p>
+          <!-- above info is from https://cwf-fcf.org/en/explore/turtles/conservation.html -->
+
+          <br />
+          <table class="table">
+            <tr>
+              <th id="number">Number</th>
+              <th id="name">Turtle or Tortoise Name</th>
+              <th id="rating">Endanger Rating</th>
+            </tr>
+            <tr>
+              <td headers="number">1</td>
+              <td headers="name">Radiated Tortoise</td>
+              <td headers="rating">5/5</td>
+            </tr>
+            <tr>
+              <td headers="number">2</td>
+              <td headers="name">Painted Terrapin</td>
+              <td headers="rating ">3/5</td>
+            </tr>
+            <tr>
+              <td headers="number">3</td>
+              <td headers="name">Angonoko Tortoise</td>
+              <td headers="rating">2/5</td>
+            </tr>
+            <tr>
+              <td headers="number">4</td>
+              <td headers="name">Kemp's Ridley Sea Turtle</td>
+              <td headers="rating">1/5</td>
+            </tr>
+            <tr>
+              <td headers="number">5</td>
+              <td headers="name">Philippine Forest Turtle</td>
+              <td headers="rating">3/5</td>
+            </tr>
+          </table>
+          <br />
+
+          <h4>Tortoises</h4>
+          <p>
+            Tortoises are again threatened by humans and the destruction of
+            their natural habitats. Another troubling statistic is that
+            tortoises are hunted and eaten in some parts of the world. This is
+            pushing some species of tortoises to extinction. The biggest way we
+            can help is by rallying behind these animals that cannot help
+            themselves. Bringing new legislation that can affect change and make
+            the trade and sale of tortoises illegal and empowering law
+            enforcement with funding to be able to track down and put a stop to
+            the illegal activity.
+          </p>
+
+          <!-- above info is from https://www.globalwildlife.org/project/turtles/ -->
+        </div>
+
+        <div class="video">
+          <iframe
+            width="600"
+            height="300"
+            src="https://www.youtube.com/embed/pDN4dyOqJzA"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p id="border_above"></p>
+        <p>
+          Copyright &copy; 2021, Delightful Tortoises Design | All Rights
+          Reserved.
+        </p>
+        <ul>
+          <li>Amy Leung</li>
+          <li>Michael Mitchell</li>
+          <li>Jachin Neubauer</li>
+          <li>Vincent chen</li>
+        </ul>
+      </div>
+    </footer>
+    <script src="js/animate.js"></script>
+  </body>
+</html>
