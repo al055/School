@@ -15,4 +15,5 @@ Demonstration of assignments and projects:
 
   <a href="https://htmlpreview.github.io/?https://github.com/al055/School/blob/main/CPRG302/Amy%20Leung%20-%20Module%205/module5.html">CPRG Module 5</a> 
   
-  <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/al055/School/main/CPRG302/project%20-%20docs/TurtlesvsTortoises.html">CPRG Course Project</a> 
+  <a href="https://htmlpreview.github.io/?https://github.com/al055/School/blob/main/CPRG302/project%20-%20docs/index.html">CPRG Course Project</a> 
+ 
