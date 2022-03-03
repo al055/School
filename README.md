@@ -9,6 +9,14 @@ CPRG260
     <li> <a href="https://youtu.be/ss6qtMmECGk">Project File Backup</a> </li>
 </ul>
 
+ITSC311
+<ul>
+        <li> <a href="https://youtu.be/vNVUAJqg4JY">ITSC311 Vulnerability Generation Script</a>   </li>
+        <li> <a href="https://youtu.be/D_4mmOz-8xA">ITSC311 OS Hardening Script</a>   </li>
+</ul>
+
+
+
 ITSC321
 <ul>
         <li> <a href="https://youtu.be/dPn_x3od1hQ">ITSC321 Phase 1</a>   </li>
