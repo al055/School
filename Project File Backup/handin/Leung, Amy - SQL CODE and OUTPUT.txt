@@ -1,0 +1,22 @@
+CREATE DATABASE FinalProject;
+USE FinalProject;
+
+CREATE TABLE Backupsqllog (date DATETIME, activity VARCHAR(20));
+
+select * FROM Backupsqllog;
+
+
+
+
+
+
+OUTPUT
+
+'2020-08-04 22:47:00', 'BACKUP'
+'2020-08-04 23:06:00', 'BACKUP'
+'2020-08-05 09:52:00', 'BACKUP'
+'2020-08-05 10:33:00', 'BACKUP'
+'2020-08-09 19:24:00', 'BACKUP'
+'2020-08-09 23:03:00', 'BACKUP'
+'2020-08-09 23:08:00', 'BACKUP'
+

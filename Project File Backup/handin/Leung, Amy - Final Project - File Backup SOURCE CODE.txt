@@ -1,0 +1,216 @@
+#!/usr/bin/python3
+import sys
+import time
+import datetime
+import shutil
+import logging
+import os
+import mysql.connector
+from mysql.connector import Error
+import errno
+
+'''
+    AMY LEUNG
+    CPRG260
+    FINAL PROJECT - FILE BACKUP
+'''
+
+# https://docs.python.org/3/library/shutil.html
+# going to use shutil and os to copy directory and files.
+
+# defined constants
+# use this to get today's date
+DATE = datetime.datetime.now().strftime("Today's date is " + "%B %d, %Y")
+dirDATE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+# created variables so that i can place them when i am exiting a menu
+# used transliteration to capitalize the whole statement
+returnMain = "\nreturning to the main menu"
+returnMain2 = returnMain.upper()
+returnLog = "\nreturning to the log menu"
+returnLog2 = returnLog.upper()
+
+'''
+define the logging text and module
+create the logging file which can be found in the directory with the project
+filename = defines the name of the log file
+level is needed to make changes
+format is so it logs as local time need the %asctime and the %message 
+i used https://docs.python.org/3/library/logging.html to find the relevant information.
+'''
+logging.basicConfig(filename="/home/student/myPython/FINAL PROJECT/FinalProjectBackup.log",
+                    level=logging.INFO,
+                    format='%(asctime)s %(message)s',
+                    datefmt='%Y/%m/%d %H:%M:%S')
+
+
+# defined a exit function, which will be used to exit from the main menu
+def menu_exit():
+    print("\nExiting program now, have a nice day.")
+    time.sleep(2)
+    sys.exit(0)
+
+
+# backup function this block of code will create a directory in a specified directory
+# the files will then be copied inside of it.
+# if the copy is successful then it will print a successful copy in the log
+def backup():
+    # these define the paths of the backup source and destination
+    # in other words which directory to backup and where
+    backup_source = input("\nEnter the Absolute Path of the Directory you want to backup: ")
+    backup_destination = input("Enter the Absolute Path of the Backup Destination (where to backup): ")
+    # i wanted to make a directory for better organization
+    new_backup_destination = (backup_destination + dirDATE)
+
+    # this for loop will search through the files in the directory and will copy to the destination
+    try:
+        # tests to see if the backup source exists
+        if os.path.exists(backup_source):
+            shutil.copytree(backup_source, new_backup_destination)
+        # to the file will add a line if backup was successful
+        logging.info('-SUCCESS- Directory Backup to: {0}'.format(new_backup_destination))
+        # call the insert_sql_query function that will insert a query in the table
+        insert_sql_query()
+    # got this from lab 5 tried to use an or bar to check if i could use 2 exceptions, does not work if you use |
+    except OSError as e:
+        # if the backup is actually a file not a directory
+        if e.errno == errno.ENOTDIR:
+            os.makedirs(new_backup_destination)
+            if os.path.isfile(backup_source):
+                shutil.copy(backup_source, new_backup_destination)
+            # make an entry in the log file if its successful
+            logging.info('-SUCCESS- File Backup to: {0}'.format(new_backup_destination))
+            # call the insert_sql_query function that will insert a query in the table
+            insert_sql_query()
+        # to the file will add a line if backup failed and what is the error
+        else:
+            logging.error('-FAIL- Error: {0}'.format(e))
+    finally:
+        print("BACKUP FINISHED")
+
+
+# used to view the log file used a previous lab to read the file and the loop prints out each line
+# no need for a dictionary or a REGEX because i am going to print all lines
+def view_log_file():
+    print("\n-----<<| FinalProjectBackup.log |>>-----\n")
+    with open("/home/student/myPython/FINAL PROJECT/FinalProjectBackup.log", "r") as FinalProjectBackup:
+        for _ in FinalProjectBackup:
+            print(_)
+    print("\nEnd of FinalProjectBackup.log File.\nHave a Nice Day.\n")
+
+
+# make a dictionary for the sql connection
+config = {'user': 'root', 'password': 'P@ssw0rd', 'host': '127.0.0.1', 'database': 'FinalProject'}
+
+
+# additional function to add a query to the sql database when backing up
+def insert_sql_query():
+    try:
+        conn = mysql.connector.connect(**config)
+        cursor = conn.cursor()
+        sqlquery_insert_backup = "INSERT INTO Backupsqllog (date, activity)" \
+                                 "VALUES(%s,%s)"
+        tuplebackup = (dirDATE, "BACKUP")
+        cursor.execute(sqlquery_insert_backup, tuplebackup)
+        conn.commit()
+
+    except Error as err:
+        print(err)
+
+    else:
+        cursor.close()
+        conn.close()
+
+
+# used to view the log file of the sql database there is a loop that prints out the rows
+def view_sql_file():
+    try:
+        # call dictionary and accept keyword arguments make a connection
+        conn = mysql.connector.connect(**config)
+        # create cursor
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM Backupsqllog")
+
+        # fetch the whole table in the sql database
+        backup_row = cursor.fetchall()
+        for _ in backup_row:
+            print(_)
+
+        print("\nTotal number of recorded activity that is reported: ", cursor.rowcount)
+        if conn.is_connected():
+            print("Connection to Database Successful.\n")
+
+    except Error as err:
+        print(err)
+
+    else:
+        cursor.close()
+        conn.close()
+
+
+'''
+using a function to make another menu for the log choice in the main menu,
+because i wanted to go back to the log menu instead of the main menu constantly
+needed to make a function that defines the log menu so i could create choices
+'''
+
+
+def log_menu():
+    os.system('clear')
+    log_choice = input("\n----- <<| LOG MENU |>> -----\n"
+                       "1: View the Program log file\n"
+                       "2: View the Program sql file\n"
+                       "3: Return to the Main Menu\n"
+                       "Enter User choice: ").lower()
+
+    if log_choice == "1" or log_choice == "log":
+        view_log_file()
+        print(returnLog2)
+        time.sleep(30)
+        return log_menu()
+
+    if log_choice == "2" or log_choice == "sql":
+        view_sql_file()
+        print(returnLog2)
+        time.sleep(30)
+        return log_menu()
+
+    if log_choice == "3":
+        print(returnMain2)
+        return main_menu()
+    # else statement ensure that if the input is not a choice then it repeats the log menu
+    # for ex user inputs space or 123, etc. it does not work
+    else:
+        return log_menu()
+
+
+def main_menu():
+    os.system('clear')
+    print("\n-------------------- <<| MAIN MENU |>> --------------------")
+    print(DATE + "\n")
+    # menu_choice with input from the menu used transliteration so that uppercase wouldn't matter
+    menu_choice = input("1: Backup Files\n"
+                        "2: View Log Files\n"
+                        "3: Exit Program\n"
+                        "Enter User choice: ").lower()
+
+    if menu_choice == "1" or menu_choice == "backup files" or menu_choice == "backup":
+        backup()
+        print(returnMain2)
+        time.sleep(10)
+        return main_menu()
+
+    if menu_choice == "2" or menu_choice == "view log files" or menu_choice == "log files":
+        log_menu()
+        print(returnLog2)
+        time.sleep(10)
+        return main_menu()
+
+    if menu_choice == "3" or menu_choice == "exit program" or menu_choice == "exit":
+        menu_exit()
+    # else statement ensure that if the input is not a choice then it repeats the main menu
+    # for ex user inputs space or 123, etc. it does not work
+    else:
+        return main_menu()
+
+
+main_menu()  # call main
